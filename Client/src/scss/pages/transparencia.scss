@@ -1,0 +1,27 @@
+html {
+    // background: black;
+}
+
+.transparencia {
+    display: flex;
+    min-height: 100vh;
+}
+
+.info,
+.relacoes {
+    max-width: 50%;
+    border: 1px solid black;
+    width: 100%;
+}
+.info {
+
+    &__title {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-weight: 500;
+    }
+}
+.relacoes {
+
+}
