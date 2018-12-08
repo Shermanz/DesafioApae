@@ -2,7 +2,7 @@ const dbMysql = require('../bin/config');
 
 transacoes = {
     get:  (callback) =>{
-        return dbMysql.query(`SELECT * FROM user`,callback)
+        return dbMysql.query(`SELECT * FROM donations`,callback)
     }
 }
 

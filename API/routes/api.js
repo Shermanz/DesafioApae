@@ -4,8 +4,11 @@ const transacoes = require('../model/transacoes');
 
 router.get('/', (req, res, next) =>{
     transacoes.get((err,data) =>{
+        if (err){
+            console.log(err);
+            res.send(err);
+        }
         res.send(data);
-
     })
 });
 
