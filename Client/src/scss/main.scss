@@ -1,6 +1,4 @@
-$black: #000;
+@import "reset";
+@import "variables";
 
-html {
-    background-color: $black;
-    transition: 1s all;
-}
+@import "pages/transparencia";
