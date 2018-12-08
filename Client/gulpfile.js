@@ -15,7 +15,7 @@ gulp.task('browserSync', () => {
     $.fancyLog("-> Running the server");
     browserSync.init({
         server: {
-            baseDir: pkg.paths.dist.base
+            baseDir: pkg.paths.src.base
         },
         port: 8080,
         startPath: 'index.html',
