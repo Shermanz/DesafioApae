@@ -13,8 +13,8 @@ class AlterNameToDonationTable extends Migration
      */
     public function up()
     {
-        Schema::table('donation', function (Blueprint $table) {
-            $table->string('name')->default('anônimo');            
+        Schema::table('donations', function (Blueprint $table) {
+            $table->string('name')->default('anônimo')->change();          
         });
     }
 
@@ -25,7 +25,7 @@ class AlterNameToDonationTable extends Migration
      */
     public function down()
     {
-        Schema::table('donation', function (Blueprint $table) {
+        Schema::table('donations', function (Blueprint $table) {
             $table->string('name')->nullable();            
         });
     }

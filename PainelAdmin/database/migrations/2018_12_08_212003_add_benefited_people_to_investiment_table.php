@@ -13,7 +13,7 @@ class AddBenefitedPeopleToInvestimentTable extends Migration
      */
     public function up()
     {
-        Schema::table('investiment', function (Blueprint $table) {
+        Schema::table('investments', function (Blueprint $table) {
             $table->string('benefited_people')->default(0); 
         });
     }
@@ -25,7 +25,7 @@ class AddBenefitedPeopleToInvestimentTable extends Migration
      */
     public function down()
     {
-        Schema::table('investiment', function (Blueprint $table) {
+        Schema::table('investments', function (Blueprint $table) {
             $table->dropColumn('benefited_people');            
         });
     }
