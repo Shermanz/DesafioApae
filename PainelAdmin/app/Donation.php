@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+// use App\User;
 
 class Donation extends Model
 {
@@ -12,6 +13,6 @@ class Donation extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->HasOne('User');
     }
 }
