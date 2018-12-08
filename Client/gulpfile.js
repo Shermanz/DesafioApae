@@ -284,7 +284,7 @@ gulp.task("fonts", ["generate-fontello"], () => {
 });
 
 gulp.task('copy', () => {
-    return gulp.src([pkg.paths.src.base + "**/*.html"]).pipe(gulp.dest(pkg.paths.dist.base));
+    // return gulp.src([pkg.paths.src.base + "**/*.html"]).pipe(gulp.dest(pkg.paths.dist.base));
 });
 
 // Default task
