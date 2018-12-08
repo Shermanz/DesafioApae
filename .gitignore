@@ -1,0 +1,15 @@
+PainelAdmin/node_modules
+PainelAdmin/public/hot
+PainelAdmin/public/storage
+PainelAdmin/storage/*.key
+PainelAdmin/vendor
+PainelAdmin/.idea
+PainelAdmin/.vscode
+PainelAdmin/nbproject
+PainelAdmin/.vagrant
+PainelAdmin/Homestead.json
+PainelAdmin/Homestead.yaml
+PainelAdmin/npm-debug.log
+PainelAdmin/yarn-error.log
+PainelAdmin/*.env
+PainelAdmin/*.phpunit.result.cache
