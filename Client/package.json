@@ -119,7 +119,7 @@
             }
         ],
         "distJs": [
-            "./src/plugin.js",
+            "./src/plugin/*.js",
             "./build/js/*.js",
             "./node_modules/lazysizes/lazysizes.min.js",
             "./node_modules/lazysizes/plugins/bgset/ls.bgset.min.js",

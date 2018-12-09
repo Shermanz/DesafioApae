@@ -292,7 +292,7 @@ gulp.task("default", ["css", "js", "browserSync", "copy"], () => {
     gulp.watch([pkg.paths.src.scss + "**/*.scss"], ["css"]);
     gulp.watch([pkg.paths.src.css + "**/*.css"], ["css"]);
     gulp.watch([pkg.paths.src.js + "**/*.js"], ["js"]);
-    gulp.watch([pkg.paths.src + "**/*.html"], ["copy"], () => {
+    gulp.watch([pkg.paths.dist + "**/*.html"], ["copy"], () => {
         gulp.src(pkg.paths.src.base)
             .pipe($.plumber({errorHandler: onError}))
             .pipe(browserSync.reload({
