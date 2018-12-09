@@ -1,54 +1,45 @@
 .transparencia {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    min-height: 100vh;
     font-family: 'Montserrat', sans-serif, Arial;
 }
 .info,
 .relacoes {
-    width: 50%;
-    padding: 1rem;
-}
-.info {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
 
-    &__pesquisar,
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        height: 1px;
+        border-bottom: 2px solid grey;
+    }
+}
+.info {
+    margin-bottom: 2rem;
+    padding-top: 0;
+
     &__beneficiados,
     .feedback {
-        margin-top: 2rem;
-    }
-    &__title {
-        width: 100%;
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.8rem;
+        margin-top: 1rem;
     }
     &__pesquisar {
         display: flex;
-    }
-    &__input,
-    &__btn-pesquisar {
-        font-size: 1rem;
-        color:  $white;
-        background-color: $yellow-lighter;
-        padding: 1rem;
-        border: transparent;
-        outline: none;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 8%;
-        right: 0;
-        width: 3px;
-        height: 84%;
-        background-color: $yellow-lighter;
-    }
-    &__btn-pesquisar {
-        border-left: 1px solid $white;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        .input__data,
+        .btn-pesquisar {
+            width: 100%;
+            margin-top: 5px;
+        }
     }
     &__valores {
         background-color: $yellow-lighter;
@@ -57,22 +48,25 @@
     &__beneficiados {
         text-align: center;
         font-size: 1.5rem;
-        color: blue;
+        color: $black;
     }
     .feedback {
         display: flex;
         flex-direction: column;
         justify-content: center;
         max-width: 500px;
+        width: 100%;
         height: 300px;
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin: 1rem;
+        padding: 8px;
         color: $white;
         background-color: $yellow-darker;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    
+        
         &__totalArrecadado {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 700;
             text-transform: uppercase;
             margin: 2rem 0;
@@ -82,11 +76,129 @@
 .relacoes {
     text-align: center;
 
-    &__title {
-        font-size: 1.2rem;
-
+    .title {    
         &--dados {
             display: block;
+        }
+    }
+    &__busca {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+
+        .input__cpf,
+        .btn-pesquisar {
+            width: 100%;
+        }
+    }
+    .table {
+        height: 100%;
+        
+        th, td {
+            border-right: 1px solid $black;
+        }
+    }
+}
+.socialbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    .icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 20%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                    background-color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                    box-shadow 350ms linear,
+                    color 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+        &.facebook {
+            background-image: url(../img/facebook.svg);
+            background-color: $facebook;
+            background-size: 25px;
+        }
+        &:hover {
+            transform: scale(1.2);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
+        }
+        &:active {
+            transform: scale(1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .info {
+        &__pesquisar {
+            flex-wrap: nowrap;
+
+            .btn-pesquisar,
+            .input__data {
+                width: auto;
+            }
+            .btn-pesquisar,
+            .input__data {
+                margin-top: 0;
+            }
+        }
+    }
+    .relacoes {
+        &__busca {
+            flex-wrap: nowrap;
+
+            .btn-pesquisar,
+            .input__data {
+                width: auto;
+            }
+            .btn-pesquisar {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .relacoes {
+        .table {
+            max-height: 500px;
+            overflow-y: scroll;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .transparencia {
+        min-height: 100vh;
+        flex-direction: row;
+    }
+    .info,
+    .relacoes {
+        width: 50%;
+        
+        &:after {
+            border: 0;
+        }
+    }
+    .info {
+        &:after {
+            top: 8%;
+            right: 0;
+            left: auto;
+            width: 5px;
+            height: 84%;
+            background-color: $yellow-lighter;
+        }
+    }
+    .relacoes {
+        .title {
+            margin-top: 2rem;
+        }
+        &:after {
+            width: 0;
         }
     }
 }
