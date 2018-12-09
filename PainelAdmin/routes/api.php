@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/transaction', 'ApiController@transaction');
+Route::post('/transaction/date', 'ApiController@dateTransaction');
+Route::post('/transaction/user', 'ApiController@userTransaction');
